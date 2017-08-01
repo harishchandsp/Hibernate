@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+
+		<!-- Assume javatraining is the database name -->
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/myhibernatedb</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">mysql@123</property>
+		<property name="hibernate.show_sql">true</property>
+ 		<property name="hibernate.hbm2ddl.auto">update</property><!-- create,create-drop,update -->
+ 		
+		<mapping class="com.hibernate.model.onetoone.PersonMain" />
+		<mapping class="com.hibernate.model.onetoone.Person" />
+		<mapping class="com.hibernate.model.onetoone.Passport" />
+		<mapping class="com.hibernate.model.onetomany.Guitar" />
+		<mapping class="com.hibernate.model.onetomany.GuitarStrings" />
+		<mapping class="com.hibernate.model.onetomany.GuitarMain" />
+		<mapping class="com.hibernate.model.manytomany.Book" />
+		<mapping class="com.hibernate.model.manytomany.Author" />
+		<mapping class="com.hibernate.model.manytomany.BookAuthorMain" />
+		
+		
+		
+		
+
+	</session-factory>
+</hibernate-configuration>
